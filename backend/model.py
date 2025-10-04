@@ -1,57 +1,84 @@
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
 
 
-# Simple example pipeline: featurize a light curve and run RF classifier
-# Replace or extend with PyTorch-based model as needed.
-
-FEATURE_COLS = ["time", "flux"]
-
-
-def featurize(df: pd.DataFrame) -> pd.DataFrame:
-    # Expect time, flux. Create basic features: flux mean, std, slopes
-    x = df.copy()
-    x['flux_mean'] = x['flux'].rolling(window=5, min_periods=1).mean()
-    x['flux_std'] = x['flux'].rolling(window=5, min_periods=1).std().fillna(0)
-    x['flux_diff'] = x['flux'].diff().fillna(0)
-    return x[['flux_mean', 'flux_std', 'flux_diff']].fillna(0)
+# Simple Model class used as a minimal, syntactically-correct placeholder.
+# Expects input arrays/dataframes with at least three columns:
+# [temperature, period, radius] (or similarly ordered features).
 
 
-# For demo we'll train a tiny model on synthetic data on first call and cache it
-_MODEL = None
-_SCA = None
+class Model:
+    def __init__(self, model_path: str | None = None):
+        # Placeholder for training logic
+        # e.g., self.model_params = {...}
+        self.threshold = 0.5
+        self.model_path = model_path
+        self.model = None  # will hold learned summary stats or params
+
+    def train(self, X_train, y_train=None):
+        """Train a minimal model by computing per-feature summary statistics.
+        This function does not fit a real ML model; it just computes means
+        used by `predict` for a simple heuristic. Replace with real training
+        code when available.
+        """
+        # Accept pandas DataFrame or numpy array
+        if isinstance(X_train, pd.DataFrame):
+            arr = X_train.to_numpy()
+        else:
+            arr = np.asarray(X_train)
+
+        # Ensure we have at least 3 columns
+        if arr.ndim != 2 or arr.shape[1] < 3:
+            raise ValueError("X_train must be 2D with at least 3 columns")
+
+        # Store simple summary statistics for three primary features
+        # Protect against zero means to avoid division by zero later
+        mean_temp = float(np.mean(arr[:, 0]))
+        mean_period = float(np.mean(arr[:, 1]))
+        mean_radius = float(np.mean(arr[:, 2]))
+        self.model = {
+            "mean_temp": mean_temp if mean_temp != 0 else 1.0,
+            "mean_period": mean_period if mean_period != 0 else 1.0,
+            "mean_radius": mean_radius if mean_radius != 0 else 1.0,
+        }
+        return self
+
+    def predict(self, X):
+        """Return heuristic prediction scores for input X.
+
+        X may be a pandas DataFrame or a numpy array. The returned value is a
+        numpy array of floats (scores in [0, inf), not bounded to [0,1]).
+        """
+        if self.model is None:
+            raise ValueError("Model has not been trained yet.")
+
+        # Normalize input to numpy array
+        if isinstance(X, pd.DataFrame):
+            X_array = X.to_numpy()
+        else:
+            X_array = np.asarray(X)
+
+        if X_array.ndim == 1:
+            X_array = X_array.reshape(1, -1)
+
+        if X_array.shape[1] < 3:
+            raise ValueError("Input X must have at least 3 columns")
+
+        # Compute a weighted score using the stored means
+        scores = (
+            0.3 * (X_array[:, 0] / self.model["mean_temp"]) +
+            0.4 * (X_array[:, 1] / self.model["mean_period"]) +
+            0.3 * (X_array[:, 2] / self.model["mean_radius"])
+        )
+
+        # Optional: clip negative values and return
+        scores = np.asarray(scores, dtype=float)
+        print("[PREDICT] Generated dummy predictions.")
+        return scores
 
 
-def _train_dummy_model():
-    global _MODEL, _SCA
-    # synthetic training data
-    rng = np.random.RandomState(0)
-    X = rng.normal(size=(200, 3))
-    y = rng.randint(0, 2, size=(200,))
-    _SCA = StandardScaler().fit(X)
-    Xs = _SCA.transform(X)
-    _MODEL = RandomForestClassifier(n_estimators=20, random_state=0)
-    _MODEL.fit(Xs, y)
 
 
-def predict_from_dataframe(df: pd.DataFrame):
-    global _MODEL, _SCA
 
-    if _MODEL is None:
-        _train_dummy_model()
 
-    feats = featurize(df)
-    X = feats.values
-    Xs = _SCA.transform(X)
-    probs = _MODEL.predict_proba(Xs)[:, 1]
 
-    # Simple thresholding to pick candidate events
-    candidates = []
-    chart_data = {"time": df['time'].tolist(), "flux": df['flux'].tolist(), "probabilities": probs.tolist()}
-    for i, p in enumerate(probs):
-        if p > 0.8:
-            candidates.append({"index": int(i), "time": float(df.iloc[i]['time']), "score": float(p)})
-
-    return candidates, chart_data
