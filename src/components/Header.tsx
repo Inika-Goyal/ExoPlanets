@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { NavLink } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   return (
@@ -7,14 +8,53 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2"> 
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-sm text-gray-300 hover:text-white">Home</a>
-          <a href="#" className="text-sm text-gray-300 hover:text-white">About</a>
-          <a href="#" className="text-sm text-gray-300 hover:text-white">Discover</a>
-          <a href="#" className="text-sm text-gray-300 hover:text-white">Contact</a>
+        <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-sm px-2 py-1 rounded transition ${
+                isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
+              }`
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/Manual"
+            className={({ isActive }) =>
+              `text-sm px-2 py-1 rounded transition ${
+                isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
+              }`
+            }
+          >
+            Manual
+          </NavLink>
+
+          <NavLink
+            to="/Facts"
+            className={({ isActive }) =>
+              `text-sm px-2 py-1 rounded transition ${
+                isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
+              }`
+            }
+          >
+            Facts
+          </NavLink>
+
+          <NavLink
+            to="/Demo"
+            className={({ isActive }) =>
+              `text-sm px-2 py-1 rounded transition ${
+                isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
+              }`
+            }
+          >
+            Demo
+          </NavLink>
         </nav>
         <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-6 rounded-md text-sm">
-          Donate
+          Contact Us
         </Button>
       </div>
     </header>
