@@ -1,4 +1,6 @@
 import React from 'react';
+//need to npm install @splinetool/react-spline
+
 
 export const GalaxySection: React.FC = () => {
   return (

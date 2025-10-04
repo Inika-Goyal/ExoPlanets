@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
           </NavLink>
 
           <NavLink
-            to="/Manual"
+            to="/About"
             className={({ isActive }) =>
               `text-sm px-2 py-1 rounded transition ${
                 isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
