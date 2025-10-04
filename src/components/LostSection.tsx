@@ -2,13 +2,13 @@ import React from 'react';
 
 export const LostSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold italic text-gray-900 mb-4">
+          <h2 className="text-5xl font-bold italic text-white mb-4">
             Uncovering the Lost
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-400 text-lg">
             Revealing the Hidden Treasures of the Cosmos
           </p>
         </div>
@@ -31,15 +31,15 @@ export const LostSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="bg-white border border-gray-200 rounded-lg p-8">
-            <p className="text-gray-600 leading-relaxed mb-6">
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
+            <p className="text-gray-300 leading-relaxed mb-6">
               Within the vast expanse of the cosmos, countless mysteries remain hidden. Our mission is to uncover these lost wonders and share their stories with the world.
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gray-200"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-700"></div>
               <div>
-                <p className="font-semibold text-gray-900">Dr. Sarah Chen</p>
-                <p className="text-sm text-gray-500">Lead Astronomer</p>
+                <p className="font-semibold text-white">Dr. Sarah Chen</p>
+                <p className="text-sm text-gray-400">Lead Astronomer</p>
               </div>
             </div>
           </div>

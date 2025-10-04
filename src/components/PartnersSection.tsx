@@ -3,14 +3,14 @@ import { Button } from '@/components/ui/button';
 
 export const PartnersSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold italic text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold italic text-white mb-6">
               Partners
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-300 mb-8 leading-relaxed">
               We collaborate with leading space agencies, research institutions, and technology companies around the world to advance our understanding of the universe and share these discoveries with everyone.
             </p>
             <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-8 py-6 rounded-full font-semibold">

@@ -3,17 +3,17 @@ import { Button } from '@/components/ui/button';
 
 export const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-black rounded-full"></div>
-          <span className="font-semibold text-lg">ActiveRover</span>
+          <div className="w-6 h-6 bg-white rounded-full"></div>
+          <span className="font-semibold text-lg text-white">ActiveRover</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-sm text-gray-600 hover:text-black">Home</a>
-          <a href="#" className="text-sm text-gray-600 hover:text-black">About</a>
-          <a href="#" className="text-sm text-gray-600 hover:text-black">Features</a>
-          <a href="#" className="text-sm text-gray-600 hover:text-black">Contact</a>
+          <a href="#" className="text-sm text-gray-400 hover:text-white">Home</a>
+          <a href="#" className="text-sm text-gray-400 hover:text-white">About</a>
+          <a href="#" className="text-sm text-gray-400 hover:text-white">Features</a>
+          <a href="#" className="text-sm text-gray-400 hover:text-white">Contact</a>
         </nav>
         <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-6 rounded-full text-sm">
           Login

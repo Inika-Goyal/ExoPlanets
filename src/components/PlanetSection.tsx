@@ -3,14 +3,14 @@ import { Button } from '@/components/ui/button';
 
 export const PlanetSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-5xl font-bold italic text-gray-900 mb-6">
+            <h2 className="text-5xl font-bold italic text-white mb-6">
               Celebrating Our Planet
             </h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-300 mb-8 leading-relaxed">
               Through our exploration of the cosmos, we've gained a profound appreciation for the unique beauty and delicate balance of Earth. Join us in celebrating and protecting our home planet for future generations.
             </p>
             <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-8 py-6 rounded-full font-semibold">
