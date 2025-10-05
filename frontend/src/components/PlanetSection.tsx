@@ -40,7 +40,7 @@ export const PlanetSection: React.FC = () => {
               Exploring Exoplanets
             </h2>
             <p className="text-gray-300 mb-8 leading-relaxed">
-              Look through the database to find exoplanets </p>
+              Look through the database to find exoplanets. </p>
             <Button
               onClick={() => {
                 // toggle the table/panel; keep panel open until toggled off

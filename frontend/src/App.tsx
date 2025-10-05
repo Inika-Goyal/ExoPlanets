@@ -6,13 +6,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import Contact from "./pages/Contact";
 import { EarthSection as Home } from "./components/EarthSection";
 import { AboutSection as About } from "./components/AboutSection";
-<<<<<<< HEAD
-=======
 import { Footer as Contact } from "./components/Footer";
->>>>>>> origin
 import { GalaxySection as Facts} from "./components/GalaxySection";
 const queryClient = new QueryClient();
 
