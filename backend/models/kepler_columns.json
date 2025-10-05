@@ -1,0 +1,12 @@
+{
+  "koi_period": "orbital_period",
+  "koi_prad": "planet_radius",
+  "koi_duration": "transit_duration",
+  "koi_depth": "transit_depth",
+  "koi_teq": "equilibrium_temp",
+  "koi_insol": "insolation_flux",
+  "koi_steff": "stellar_teff",
+  "koi_srad": "stellar_radius",
+  "koi_slogg": "stellar_logg",
+  "koi_disposition": "disposition"
+}

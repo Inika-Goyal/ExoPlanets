@@ -1,37 +1,33 @@
-# parser
+"""File parsing helpers.
+
+This module provides a small API used by the FastAPI backend to accept
+CSV/JSON uploads coming from the frontend. It also supports registering
+and persisting per-source column mappings so different survey files can be
+normalized to a common schema.
+"""
+
+import io
+import json
+import os
+from typing import Dict, Optional
 
 import pandas as pd
-import io
-from typing import Union
+
+MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
+os.makedirs(MODELS_DIR, exist_ok=True)
 
 
-def parse_file(file_bytes: bytes, content_type: str | None = None) -> pd.DataFrame:
-    """Parse uploaded file bytes into a pandas DataFrame.
-
-    Supports CSV and JSON content. If `content_type` is provided it will be
-    used as a hint; otherwise the function will try JSON first then CSV.
-
-    Args:
-        file_bytes: Raw bytes of the uploaded file.
-        content_type: Optional content type hint, e.g. 'application/json' or 'text/csv'.
-
-    Returns:
-        pd.DataFrame
-
-    Raises:
-        ValueError: If file cannot be parsed.
-    """
-    # Try to use content_type hint first
+def parse_file(file_bytes: bytes, content_type: Optional[str] = None) -> pd.DataFrame:
+    """Parse uploaded bytes into a DataFrame (CSV or JSON)."""
     buf = io.BytesIO(file_bytes)
 
-    # JSON hint
+    # Use content type hint where available
     if content_type and "json" in content_type.lower():
         try:
             return pd.read_json(buf)
         except Exception as e:
             raise ValueError(f"Failed to parse JSON: {e}")
 
-    # Try CSV if content type hints at CSV
     if content_type and ("csv" in content_type.lower() or "text" in content_type.lower()):
         try:
             buf.seek(0)
@@ -39,7 +35,7 @@ def parse_file(file_bytes: bytes, content_type: str | None = None) -> pd.DataFra
         except Exception as e:
             raise ValueError(f"Failed to parse CSV: {e}")
 
-    # No reliable hint: try JSON first, then CSV
+    # No hint: try JSON first then CSV
     buf.seek(0)
     try:
         return pd.read_json(buf)
@@ -51,12 +47,42 @@ def parse_file(file_bytes: bytes, content_type: str | None = None) -> pd.DataFra
             raise ValueError(f"Unable to parse file as JSON or CSV: {e}")
 
 
-def parse_from_uploadfile(upload_file) -> pd.DataFrame:
-    """Convenience wrapper for FastAPI UploadFile objects.
+def register_column_mapping(name: str, mapping: Dict[str, str]):
+    """Persist a column mapping (source name -> mapping dict) under `backend/models`.
 
-    Reads bytes and passes through to `parse_file` using the upload_file.content_type
-    as a hint.
+    The mapping should be a dict mapping source column names to normalized column
+    names (for example produced by preprocessing notebooks). These mappings are
+    used to normalize incoming files before they are passed to training/prediction.
     """
+    dst = os.path.join(MODELS_DIR, f"{name}_columns.json")
+    with open(dst, "w", encoding="utf-8") as f:
+        json.dump(mapping, f, indent=2)
+
+
+def load_column_mapping(name: str) -> Optional[Dict[str, str]]:
+    path = os.path.join(MODELS_DIR, f"{name}_columns.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def normalize_columns(df: pd.DataFrame, mapping: Dict[str, str]) -> pd.DataFrame:
+    """Rename and return only the mapped columns present in df.
+
+    Any missing source columns are ignored; the returned DataFrame will contain
+    only the normalized column names (the values of mapping) for keys that existed
+    in the input DataFrame.
+    """
+    # create a reduced mapping containing only columns present in df
+    available = {src: dst for src, dst in mapping.items() if src in df.columns}
+    if not available:
+        raise ValueError("No mapped columns found in provided DataFrame")
+    df_selected = df[list(available.keys())].rename(columns=available)
+    return df_selected
+
+
+def parse_from_uploadfile(upload_file) -> pd.DataFrame:
     contents = upload_file.file.read()
     upload_file.file.seek(0)
     return parse_file(contents, getattr(upload_file, "content_type", None))
