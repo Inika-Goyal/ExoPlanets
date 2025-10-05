@@ -17,10 +17,9 @@ export const AboutSection: React.FC = () => {
               By combining multiple supervised learning algorithms into a stacking model and connecting our website to Northwestern’s QUEST Supercomputer, we’ve leveraged machine learning and high-performance computing to achieve highly accurate predictions.
               <br /><br />
               After training and tuning our model, we were able to confidently classify previously unidentified survey candidates as exoplanets, paving the way for future research and helping prioritize which potential worlds deserve the most follow-up and observational resources. Our interactive model editor even allows users to adjust hyperparameters and rerun the model themselves.
+              <br /><br />
+              The model then goes through the data and find the 10 most likely exoplanet candiates.
             </p>
-            <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-8 py-6 rounded-full font-semibold">
-              Explore Data
-            </Button>
           </div>
           <div className="rounded-lg overflow-hidden">
             <img

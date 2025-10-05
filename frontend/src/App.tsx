@@ -22,12 +22,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           {/* Additional routes share the same layout; Index already has content spacing */}
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/facts" element={<Facts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-  <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
