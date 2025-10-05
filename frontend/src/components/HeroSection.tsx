@@ -27,14 +27,11 @@ export const HeroSection: React.FC = () => {
           </h1>
         </div>
         
-        <p className="text-gray-300 text-lg mb-8 max-w-2xl">
+        <p className="text-gray-400 text-lg mb-8 max-w-2xl">
           From raw space telescope light curves to vetted planet candidates: detrending, transit signal detection,
           physical modeling, false-positive filtering, and rich stellar context—streamlined so you can explore emerging worlds.
         </p>
         
-        <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-8 py-6 rounded-full text-base font-semibold">
-          Explore Now
-        </Button>
       </div>
     </section>
   );
