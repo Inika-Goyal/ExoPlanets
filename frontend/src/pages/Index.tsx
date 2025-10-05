@@ -5,7 +5,7 @@ import { GalaxySection } from '../components/GalaxySection';
 import { EarthSection } from '../components/EarthSection';
 import { LostSection } from '../components/LostSection';
 import { PlanetSection } from '../components/PlanetSection';
-import { PartnersSection } from '../components/AboutSection';
+import { AboutSection } from '../components/AboutSection';
 import { Footer } from '../components/Footer';
 
 
@@ -19,7 +19,7 @@ const Index = () => {
         <EarthSection />
         <LostSection />
         <PlanetSection />
-        <PartnersSection />
+        <AboutSection />
       </div>
       <Footer />
     </div>

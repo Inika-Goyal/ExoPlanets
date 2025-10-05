@@ -6,7 +6,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { Header } from "./components/Header";
 import { EarthSection as Home } from "./components/EarthSection";
-import { PartnersSection as About } from "./components/AboutSection";
+import { AboutSection as About } from "./components/AboutSection";
 import { Footer as Contact } from "./components/Footer";
 import { GalaxySection as Facts} from "./components/GalaxySection";
 

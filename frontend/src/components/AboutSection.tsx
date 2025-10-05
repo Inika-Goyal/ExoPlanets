@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Button } from './ui/button';
-=======
-import { Button } from '@/components/ui/button';
->>>>>>> 137819e6b4a571852ff46f621f0562ecdd7894eb
 
 export const AboutSection: React.FC = () => {
   return (
