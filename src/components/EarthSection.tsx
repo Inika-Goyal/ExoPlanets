@@ -8,9 +8,12 @@ export const EarthSection: React.FC = () => {
           <div className="rounded-lg overflow-hidden bg-black">
             {/* Replaced 3D model with animated Kepler GIF. Place the GIF at public/kepler.gif or adjust the src below. */}
             <img
-              src="/kepler.gif" /* If you haven't added it yet, drop the GIF file into the public/ folder as kepler.gif */
-              alt="NASA Kepler mission artist concept of an exoplanet orbiting its star"
+              src="/kepler.gif"
+              alt="Animated Kepler mission artist concept of an exoplanet orbiting its star"
+              width={1365}
+              height={768}
               loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: '600px', display: 'block', objectFit: 'cover', background: 'black' }}
             />
           </div>

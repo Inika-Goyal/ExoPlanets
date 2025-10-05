@@ -30,5 +30,3 @@ export const AboutSection: React.FC = () => {
   );
 };
 
-// Provide backward-compatible alias expected elsewhere in the codebase.
-export { AboutSection as PartnersSection };

@@ -4,10 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
-import '@google/model-viewer'; 
 import { Header } from "@/components/Header";
 import { EarthSection as Home } from "@/components/EarthSection";
-import { PartnersSection as About } from "@/components/AboutSection";
+import { AboutSection as About } from "@/components/AboutSection";
 import { Footer as Contact } from "@/components/Footer";
 import { GalaxySection as Facts} from "@/components/GalaxySection";
 
