@@ -1,0 +1,8 @@
+# CODEOWNERS defines who automatically reviews changes.
+# Format: path  @github-user1 @github-team
+
+# Everything defaults to core maintainers
+*       @Inika-Goyal @YourOrgOrTeam
+
+# Frontend specific
+/frontend/  @Inika-Goyal

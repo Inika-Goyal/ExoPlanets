@@ -1,0 +1,20 @@
+name: Enforce CODEOWNERS (informational)
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  codeowners:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Show codeowners (if exists)
+        run: |
+          if [ -f .github/CODEOWNERS ]; then
+            echo 'CODEOWNERS content:'
+            cat .github/CODEOWNERS
+          else
+            echo 'No CODEOWNERS file found.'
+          fi
