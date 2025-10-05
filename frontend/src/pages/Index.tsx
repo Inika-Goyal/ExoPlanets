@@ -8,6 +8,7 @@ import { PlanetSection } from '../components/PlanetSection';
 import { PartnersSection } from '../components/AboutSection';
 import { Footer } from '../components/Footer';
 
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-black">
