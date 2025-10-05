@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Button } from '@/components/ui/button';
+=======
+import { Button } from './ui/button';
+>>>>>>> origin
 
 export const AboutSection: React.FC = () => {
   return (
