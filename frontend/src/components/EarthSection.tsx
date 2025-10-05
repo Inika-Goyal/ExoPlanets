@@ -6,13 +6,15 @@ export const EarthSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden bg-black">
-            <model-viewer
-              src="/deritis--solar_system_model/scene.gltf"
-              alt="Solar system model"
-              camera-controls
-              auto-rotate
-              interaction-prompt="none"
-              style={{ width: '100%', height: '600px', display: 'block', background: 'transparent' }}
+            {/* Replaced 3D model with animated Kepler GIF. Place the GIF at public/kepler.gif or adjust the src below. */}
+            <img
+              src="/kepler.gif"
+              alt="Animated Kepler mission artist concept of an exoplanet orbiting its star"
+              width={1365}
+              height={768}
+              loading="lazy"
+              decoding="async"
+              style={{ width: '100%', height: '600px', display: 'block', objectFit: 'cover', background: 'black' }}
             />
           </div>
           <div>
