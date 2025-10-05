@@ -9,7 +9,7 @@ import { EarthSection as Home } from "@/components/EarthSection";
 import { AboutSection as About } from "@/components/AboutSection";
 import { Footer as Contact } from "@/components/Footer";
 import { GalaxySection as Facts} from "@/components/GalaxySection";
-
+import { PlanetSection } from "@/components/PlanetSection"; // Import the PlanetSection component
 const queryClient = new QueryClient();
 
 const App = () => (
