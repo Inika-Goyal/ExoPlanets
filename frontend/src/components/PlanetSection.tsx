@@ -17,11 +17,10 @@ export const PlanetSection: React.FC = () => {
   const [selectedPlanet, setSelectedPlanet] = useState<PlanetRow | null>(null);
 
   // Hyperparameters
-  const defaultParams = { threshold: 0.5, weightTemp: 0.3, weightPeriod: 0.4, weightRadius: 0.3 };
-  const [threshold, setThreshold] = useState(defaultParams.threshold);
-  const [weightTemp, setWeightTemp] = useState(defaultParams.weightTemp);
-  const [weightPeriod, setWeightPeriod] = useState(defaultParams.weightPeriod);
-  const [weightRadius, setWeightRadius] = useState(defaultParams.weightRadius);
+  const defaultParams = { num_estimators: 0.5, learning_rate : 0.3, max_dept: 0.4};
+  const [num_estimators, set_estimators] = useState(defaultParams.num_estimators);
+  const [learning_rate, set_learning_rate] = useState(defaultParams.learning_rate);
+  const [max_dept, set_max_dept] = useState(defaultParams.max_dept);
 
   const [planetScores, setPlanetScores] = useState<number[]>([]);
 
@@ -53,21 +52,20 @@ export const PlanetSection: React.FC = () => {
     if (rows.length === 0) return;
 
     const scores = rows.map((row) => {
-      const temp = parseFloat(String(row['temperature'])) || 1;
-      const period = parseFloat(String(row['period'])) || 1;
-      const radius = parseFloat(String(row['radius'])) || 1;
+      const num_estimators = parseFloat(String(row['num_estimators'])) || 1;
+      const learning_rate = parseFloat(String(row['learning_rate'])) || 1;
+      const max_dept = parseFloat(String(row['max_rate'])) || 1;
 
-      return (weightTemp * temp) / 100 + (weightPeriod * period) / 100 + (weightRadius * radius) / 100;
+      return (num_estimators * 100) / 100 + (learning_rate * 100) / 100 + (max_dept * 100) / 100;
     });
 
     setPlanetScores(scores);
-  }, [weightTemp, weightPeriod, weightRadius, rows]);
+  }, [num_estimators, learning_rate, max_dept]);
 
   const resetHyperparams = () => {
-    setThreshold(defaultParams.threshold);
-    setWeightTemp(defaultParams.weightTemp);
-    setWeightPeriod(defaultParams.weightPeriod);
-    setWeightRadius(defaultParams.weightRadius);
+    set_estimators(defaultParams.num_estimators);
+    set_learning_rate(defaultParams.learning_rate);
+    set_max_dept(defaultParams.max_dept);
   };
 
   return (
@@ -156,50 +154,38 @@ export const PlanetSection: React.FC = () => {
                 <h4 className="font-bold text-lg mb-4 text-center">Hyperparameters</h4>
                 <div className="flex flex-col gap-4">
                   <div>
-                    <label className="block text-gray-300 mb-1">Threshold: {threshold.toFixed(2)}</label>
+                    <label className="block text-gray-300 mb-1">Numer of Estimators: {num_estimators.toFixed(2)}</label>
                     <input
                       type="range"
                       min={0}
                       max={1}
                       step={0.01}
-                      value={threshold}
-                      onChange={(e) => setThreshold(parseFloat(e.target.value))}
+                      value={num_estimators}
+                      onChange={(e) => set_estimators(parseFloat(e.target.value))}
                       className="w-full"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-300 mb-1">Weight Temp: {weightTemp.toFixed(2)}</label>
+                    <label className="block text-gray-300 mb-1"> Learning Rate: {learning_rate.toFixed(2)}</label>
                     <input
                       type="range"
                       min={0}
                       max={1}
                       step={0.01}
-                      value={weightTemp}
-                      onChange={(e) => setWeightTemp(parseFloat(e.target.value))}
+                      value={learning_rate}
+                      onChange={(e) => set_learning_rate(parseFloat(e.target.value))}
                       className="w-full"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-300 mb-1">Weight Period: {weightPeriod.toFixed(2)}</label>
+                    <label className="block text-gray-300 mb-1">Maxiumum depth: {max_dept.toFixed(2)}</label>
                     <input
                       type="range"
                       min={0}
                       max={1}
                       step={0.01}
-                      value={weightPeriod}
-                      onChange={(e) => setWeightPeriod(parseFloat(e.target.value))}
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 mb-1">Weight Radius: {weightRadius.toFixed(2)}</label>
-                    <input
-                      type="range"
-                      min={0}
-                      max={1}
-                      step={0.01}
-                      value={weightRadius}
-                      onChange={(e) => setWeightRadius(parseFloat(e.target.value))}
+                      value={max_dept}
+                      onChange={(e) => set_max_dept(parseFloat(e.target.value))}
                       className="w-full"
                     />
                   </div>
