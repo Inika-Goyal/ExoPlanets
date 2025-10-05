@@ -5,11 +5,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import Contact from "@/pages/Contact";
 import { EarthSection as Home } from "@/components/EarthSection";
 import { AboutSection as About } from "@/components/AboutSection";
-import { Footer as Contact } from "@/components/Footer";
-import { GalaxySection as Facts} from "@/components/GalaxySection";
-import { PlanetSection } from "@/components/PlanetSection"; // Import the PlanetSection component
+import { GalaxySection as Facts } from "@/components/GalaxySection";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,16 +17,17 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <BrowserRouter>
-      <Header />
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Additional routes share the same layout; Index already has content spacing */}
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/facts" element={<Facts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
