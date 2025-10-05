@@ -17,7 +17,7 @@ export const HeroSection: React.FC = () => {
       
       <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
         <p className="text-gray-400 text-sm tracking-wider uppercase mb-4">
-          Lost Planet Recovery Tool
+          Exoplanet Discovery Platform
         </p>
         
         <div className="flex items-center gap-4 mb-6">
@@ -28,7 +28,8 @@ export const HeroSection: React.FC = () => {
         </div>
         
         <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-          past civilisations have been lost to time, the<br />mission to rediscover them
+          From raw space telescope light curves to vetted planet candidates: detrending, transit signal detection,
+          physical modeling, false-positive filtering, and rich stellar context—streamlined so you can explore emerging worlds.
         </p>
         
         <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-8 py-6 rounded-full text-base font-semibold">

@@ -60,6 +60,30 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Feature Flags
+
+This project supports simple build-time feature flags via Vite environment variables. To enable a flag, create a `.env` (or `.env.local`) file in the project root and restart the dev server.
+
+Current flags:
+
+- `VITE_CLAUDE_SONNET4_ENABLED` (default: disabled) — set to `true` to enable Claude Sonnet 4 for all clients.
+
+Example `.env` file:
+
+```
+VITE_CLAUDE_SONNET4_ENABLED=true
+```
+
+In code you can check the flag with:
+
+```ts
+import { isClaudeSonnet4Enabled } from '@/lib/featureFlags';
+
+if (isClaudeSonnet4Enabled()) {
+	// Claude Sonnet 4 specific logic here
+}
+```
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/c931450c-7062-4130-a34d-9d9c87e8b4f6) and click on Share -> Publish.
