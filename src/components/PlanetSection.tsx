@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export const PlanetSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-black-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
