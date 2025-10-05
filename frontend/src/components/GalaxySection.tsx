@@ -1,6 +1,4 @@
 import React from 'react';
-//need to npm install @splinetool/react-spline
-
 
 export const GalaxySection: React.FC = () => {
   return (
@@ -8,75 +6,49 @@ export const GalaxySection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold italic text-white mb-4">
-            Unlocking the Mysteries of the Galaxy
+            Exoplanet Fun Facts
           </h2>
           <p className="text-gray-400 text-lg">
-            From Dark Voids to Shimmering Nebulae
+            A glimpse into the diversity and the wonders of worlds beyond our solar system.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div className="rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=800&q=80" 
+            <img
+              src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=800&q=80"
               alt="Planet in space"
               className="w-full h-[280px] object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img 
-              src="https://th.bing.com/th/id/OIP.MMhssOvKE4eVoB66Enm7sAHaEK?w=310&h=180&c=7&r=0&o=7&cb=12&dpr=1.4&pid=1.7&rm=3" 
+            <img
+              src="https://th.bing.com/th/id/OIP.MMhssOvKE4eVoB66Enm7sAHaEK?w=310&h=180&c=7&r=0&o=7&cb=12&dpr=1.4&pid=1.7&rm=3"
               alt="Moon surface"
               className="w-full h-[280px] object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-                  <path d="M12 6v6l4 2" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-white mt-2">Revealing the Cosmic</h3>
-            </div>
+          <div className="glass-card rounded-lg p-8">
             <p className="text-gray-300 leading-relaxed">
-              Embark on an Extraordinary Expedition to Unravel the Enigmatic Mysteries Concealed Within the Boundless Realms of Space
+              Over 5,000 exoplanets have been confirmed to date across a wide range of sizes, compositions, and orbital configurations.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" strokeWidth="2"/>
-                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-white mt-2">Exploring the Stars</h3>
-            </div>
+          <div className="glass-card rounded-lg p-8">
             <p className="text-gray-300 leading-relaxed">
-              Dive into the Depths of Space and Witness the Breathtaking Celestial Landscapes That Lie Beyond Our Reach
+              Certain rocky worlds, such as 55 Cancri e, may experience diamond rain due to their carbon-rich atmospheres.
             </p>
           </div>
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-white mt-2">Uncovering the Celestial</h3>
-            </div>
+          <div className="glass-card rounded-lg p-8">
             <p className="text-gray-300 leading-relaxed">
-              Unveil the Extraordinary Phenomena that Await in the Vast Expanse of the Universe
+              One remarkable discovery, WD 1856+534 b, is a Jupiter-sized planet orbiting a white dwarf. It circles the dead star every 34 hours, so close that it narrowly avoids being torn apart by tidal forces and puzzles astronomers as to its origin.
             </p>
           </div>
           <div className="rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" 
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
               alt="Earth from space"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             />

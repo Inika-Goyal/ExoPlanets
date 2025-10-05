@@ -60,7 +60,7 @@ export const PlanetSection: React.FC = () => {
               {showTable && (
                 <div className="bg-slate-900/95 text-white rounded-lg p-4 max-h-80 overflow-y-auto shadow-2xl w-full md:w-80 flex flex-col gap-3">
                   <h3 className="text-lg font-bold text-white mb-4 text-center">
-                    Confirmed Exoplanets: Accuracy 56%
+                    Confirmed Exoplanets
                   </h3>
                   {planetNames.length === 0 ? (
                     <p className="text-gray-300">Loading…</p>
@@ -113,21 +113,7 @@ export const PlanetSection: React.FC = () => {
           <div className="relative">
             <div className="relative w-full aspect-square flex items-center justify-center">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-64 h-64 relative">
-                  {/* Petals */}
-                  <div className="absolute inset-0">
-                    {[...Array(8)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-32 h-48 bg-gradient-to-br from-gray-100 to-gray-300 rounded-full origin-bottom"
-                        style={{
-                          left: '50%',
-                          bottom: '50%',
-                          transform: `translateX(-50%) rotate(${i * 45}deg)`,
-                        }}
-                      />
-                    ))}
-                  </div>
+                <div className="w-64 h-64 relative">                  
                   {/* Center Earth or table */}
                   <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-60 h-60 rounded-full overflow-hidden shadow-2xl hover:bg-grey-700">
