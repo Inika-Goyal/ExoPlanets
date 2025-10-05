@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export const AboutSection: React.FC = () => {
   return (
-  <section id="about" className="py-20 bg-black">
+    <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

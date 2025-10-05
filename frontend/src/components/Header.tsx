@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button'; // if path incorrect, adjust to './ui/button'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {

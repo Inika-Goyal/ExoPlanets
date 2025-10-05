@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import earthImage from '@/assets/earth-space.avif';
+import { Button } from './ui/button';
+import earthImage from '/src/assets/earth-space.avif';
 
 export const HeroSection: React.FC = () => {
   return (
