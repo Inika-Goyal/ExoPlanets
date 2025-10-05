@@ -2,17 +2,16 @@ import React from 'react';
 
 export const EarthSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-black-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden bg-black">
-            <model-viewer
-              src="/deritis--solar_system_model/scene.gltf"
-              alt="Solar system model"
-              camera-controls
-              auto-rotate
-              interaction-prompt="none"
-              style={{ width: '100%', height: '600px', display: 'block', background: 'transparent' }}
+            {/* Replaced 3D model with animated Kepler GIF. Place the GIF at public/kepler.gif or adjust the src below. */}
+            <img
+              src="/kepler.gif" /* If you haven't added it yet, drop the GIF file into the public/ folder as kepler.gif */
+              alt="NASA Kepler mission artist concept of an exoplanet orbiting its star"
+              loading="lazy"
+              style={{ width: '100%', height: '600px', display: 'block', objectFit: 'cover', background: 'black' }}
             />
           </div>
           <div>

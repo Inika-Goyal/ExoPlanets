@@ -30,5 +30,5 @@ export const AboutSection: React.FC = () => {
   );
 };
 
-// Backward compatibility: keep old name if other files still import PartnersSection
+// Provide backward-compatible alias expected elsewhere in the codebase.
 export { AboutSection as PartnersSection };
