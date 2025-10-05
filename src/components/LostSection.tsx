@@ -31,24 +31,24 @@ export const LostSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Within the vast expanse of the cosmos, countless mysteries remain hidden. Our mission is to uncover these lost wonders and share their stories with the world.
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gray-700"></div>
-              <div>
-                <p className="font-semibold text-white">Dr. Sarah Chen</p>
-                <p className="text-sm text-gray-400">Lead Astronomer</p>
-              </div>
-            </div>
-          </div>
           <div className="rounded-lg overflow-hidden">
+            <div className="px-4 py-3 text-white font-medium">Exo Planet OGLE-TR-56 b</div>
             <img 
-              src="https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=800&q=80" 
-              alt="Earth night view"
+              src="/images/ogle-tr-56b.jpeg" 
+              alt="OGLE-TR-56 b"
               className="w-full h-[300px] object-cover hover:scale-105 transition-transform duration-300"
             />
+          </div>
+          <div className="space-y-4 text-gray-300 leading-relaxed">
+            <p>
+              <span className="text-white font-semibold">OGLE-TR-56 b</span> is known as a <span className="text-white font-semibold">"Hot Jupiter"</span>. It is a giant gas planet, similar in size to Jupiter. However, it orbits incredibly close to its parent star—about 25 times closer than Mercury is to our Sun.
+            </p>
+            <p>
+              <span className="text-white font-semibold">A Scorching World:</span> This proximity creates an unimaginable environment. Its temperature is estimated to be a blistering <span className="text-white font-semibold">4,400°F (2,400°C)</span>, which makes it hotter than some cool stars! It is so hot that iron could condense and fall as liquid droplets in its atmosphere.
+            </p>
+            <p>
+              This perfectly illustrates the <span className="text-white font-semibold">stunning diversity</span> and truly <span className="text-white font-semibold">alien nature</span> of exoplanets. It's a type of planet we don't have in our own solar system, proving that planetary systems can form in ways very different from ours.
+            </p>
           </div>
         </div>
       </div>

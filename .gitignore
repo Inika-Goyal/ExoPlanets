@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Windows alternate data stream metadata (causes invalid paths on other platforms)
+*:[Zz]one.Identifier
