@@ -1,4 +1,6 @@
 import React from 'react';
+//need to npm install @splinetool/react-spline
+
 
 export const GalaxySection: React.FC = () => {
   return (
@@ -23,7 +25,7 @@ export const GalaxySection: React.FC = () => {
           </div>
           <div className="rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80" 
+              src="https://th.bing.com/th/id/OIP.MMhssOvKE4eVoB66Enm7sAHaEK?w=310&h=180&c=7&r=0&o=7&cb=12&dpr=1.4&pid=1.7&rm=3" 
               alt="Moon surface"
               className="w-full h-[280px] object-cover hover:scale-105 transition-transform duration-300"
             />
