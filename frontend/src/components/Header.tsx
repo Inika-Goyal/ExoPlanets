@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Button } from '../components/ui/button'; // if path incorrect, adjust to './ui/button'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
@@ -21,6 +22,12 @@ export const Header: React.FC = () => {
     }
   };
 
+=======
+import { Button } from './ui/button';
+import { NavLink } from 'react-router-dom';
+
+export const Header: React.FC = () => {
+>>>>>>> origin/Albert
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
   <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
@@ -60,12 +67,25 @@ export const Header: React.FC = () => {
             Facts
           </NavLink>
 
+<<<<<<< HEAD
           <button
             onClick={scrollToPlanet}
             className={`text-sm px-2 py-1 rounded transition text-gray-300 hover:text-white`}
           >
             Demo
           </button>
+=======
+          <NavLink
+            to="/Demo"
+            className={({ isActive }) =>
+              `text-sm px-2 py-1 rounded transition ${
+                isActive ? 'text-white font-semibold bg-white/5' : 'text-gray-300 hover:text-white'
+              }`
+            }
+          >
+            Demo
+          </NavLink>
+>>>>>>> origin/Albert
         </nav>
         <Button className="bg-[#1a237e] hover:bg-[#0d1642] text-white px-6 rounded-md text-sm">
           Contact Us

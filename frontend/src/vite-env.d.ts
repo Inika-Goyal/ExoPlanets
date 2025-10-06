@@ -7,4 +7,7 @@ declare module '*.jpeg';
 declare module '*.gif';
 declare module '*.webp';
 // SVG module types are provided by vite's types; avoid redeclaring to prevent duplicate identifier errors.
+<<<<<<< HEAD
 declare module 'papaparse';
+=======
+>>>>>>> origin/Albert

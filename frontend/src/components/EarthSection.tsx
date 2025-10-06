@@ -2,7 +2,11 @@ import React from 'react';
 
 export const EarthSection: React.FC = () => {
   return (
+<<<<<<< HEAD
   <section id="earth" className="py-20 bg-black-900">
+=======
+    <section className="py-20 bg-black-900">
+>>>>>>> origin/Albert
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden bg-black">

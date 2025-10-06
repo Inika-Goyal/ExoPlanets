@@ -11,7 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "d3-dsv": "^3.0.1",
+=======
+>>>>>>> origin/Albert
     "@google/model-viewer": "^4.1.0",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",

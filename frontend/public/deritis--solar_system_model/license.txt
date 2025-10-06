@@ -1,0 +1,11 @@
+Model Information:
+* title:	DeRitis--Solar System Model
+* source:	https://sketchfab.com/3d-models/deritis-solar-system-model-7ad2fa41aa5b4794b4f2203cd3c1db7c
+* author:	PaDeRitis (https://sketchfab.com/PaDeRitis)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DeRitis--Solar System Model" (https://sketchfab.com/3d-models/deritis-solar-system-model-7ad2fa41aa5b4794b4f2203cd3c1db7c) by PaDeRitis (https://sketchfab.com/PaDeRitis) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

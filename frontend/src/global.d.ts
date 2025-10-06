@@ -3,6 +3,7 @@ declare namespace JSX {
     'model-viewer': any;
   }
 }
+<<<<<<< HEAD
 
 // Vite env variable typings for feature flags
 interface ImportMetaEnv {
@@ -11,3 +12,5 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+=======
+>>>>>>> origin/Albert

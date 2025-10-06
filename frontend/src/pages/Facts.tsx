@@ -3,6 +3,7 @@ import React from 'react';
 const Facts: React.FC = () => {
   return (
     <main className="max-w-4xl mx-auto p-8">
+<<<<<<< HEAD
       <h1 className="text-3xl font-bold mb-6">Fun Facts About Exoplanets</h1>
       <ul className="list-disc list-inside space-y-4 text-gray-300 leading-relaxed">
         <li>
@@ -18,6 +19,10 @@ const Facts: React.FC = () => {
           One remarkable discovery, <em>WD 1856+534 b</em>, is a Jupiter-sized planet orbiting a white dwarf. It circles the dead star every 34 hours, so close that it narrowly avoids being torn apart by tidal forces and puzzles astronomers as to its origin.
         </li>
       </ul>
+=======
+      <h1 className="text-3xl font-bold mb-4">Facts</h1>
+      <p className="text-gray-300">Interesting facts about exoplanets and the solar system go here.</p>
+>>>>>>> origin/Albert
     </main>
   );
 };

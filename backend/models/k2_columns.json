@@ -1,0 +1,12 @@
+{
+  "pl_orbper": "orbital_period",
+  "pl_rade": "planet_radius",
+  "pl_trandur": "transit_duration",
+  "pl_trandep": "transit_depth",
+  "pl_eqt": "equilibrium_temp",
+  "pl_insol": "insolation_flux",
+  "st_teff": "stellar_teff",
+  "st_rad": "stellar_radius",
+  "st_logg": "stellar_logg",
+  "disposition": "disposition"
+}

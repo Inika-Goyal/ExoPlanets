@@ -3,7 +3,15 @@ import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-reac
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "../../lib/utils";
+<<<<<<< HEAD
 import { Button } from "./button";
+=======
+<<<<<<<< HEAD:src/components/ui/carousel.tsx
+import { Button } from "./button";
+========
+import { Button } from "../ui/button";
+>>>>>>>> origin/Albert:frontend/src/components/ui/carousel.tsx
+>>>>>>> origin/Albert
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
